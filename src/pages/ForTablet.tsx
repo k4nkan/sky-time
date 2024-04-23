@@ -1,8 +1,15 @@
 import React from "react";
+import { backColorChange } from "../style/style";
+
+const backgroundStyle: React.CSSProperties = {
+  height:"100vh",
+  width:"100%",
+  ...backColorChange
+};
 
 const ForTablet: React.FC = () => {
   return (
-    <div>
+    <div style={backgroundStyle}>
       for tablet
     </div>
   );
