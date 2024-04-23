@@ -1,6 +1,5 @@
 import React from "react";
 import useMedia from "use-media";
-
 import ForTablet from "./ForTablet";
 import ForPc from "./ForPc";
 import ForSmartphone from "./ForMobile";
