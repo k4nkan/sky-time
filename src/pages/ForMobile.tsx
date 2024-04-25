@@ -1,21 +1,14 @@
 import React, { CSSProperties, useEffect, useState } from "react";
-
-import { backColorChange } from "../style/time-color";
+import BackColorChange from "../style/backDesign";
 import { updateTime } from "../style/now-time";
 
-const backgroundStyle: React.CSSProperties = {
-  height: "100vh",
-  width: "100%",
-  ...backColorChange
-};
-
 const ForMobile: React.FC = () => {
-  const [currentTime, setCurrentTime] = useState("");
+  const [CurrentTime, setCurrentTime] = useState<string[]>(["00", "00"]);
   
   useEffect(() => {
     const intervalId = setInterval(() => {
-      const timeValue = updateTime();
-      setCurrentTime(timeValue);
+      const [hours, minutes] = updateTime();
+      setCurrentTime([hours, minutes]);
     }, 1000);
 
     return () => {
@@ -23,12 +16,11 @@ const ForMobile: React.FC = () => {
     };
   }, []);
 
+  return (
+    <div>
+      <BackColorChange CurrentHours={parseInt(CurrentTime[0])} CurrentMinutes={parseInt(CurrentTime[1])}/>
+    </div>
+  );
+};
 
-    return (
-      <div style={backgroundStyle}>
-        {currentTime}
-      </div>
-    );
-  };
-
-  export default ForMobile;
+export default ForMobile;
