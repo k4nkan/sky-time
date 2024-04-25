@@ -1,26 +1,12 @@
-import React, { CSSProperties, useEffect, useState } from "react";
-import BackColorChange from "../style/backDesign";
-import { updateTime } from "../style/now-time";
+import React from "react";
+import SkyClock from "../compornent/SkyClock";
 
-const ForMobile: React.FC = () => {
-  const [CurrentTime, setCurrentTime] = useState<string[]>(["00", "00"]);
-  
-  useEffect(() => {
-    const intervalId = setInterval(() => {
-      const [hours, minutes] = updateTime();
-      setCurrentTime([hours, minutes]);
-    }, 1000);
-
-    return () => {
-      clearInterval(intervalId);
-    };
-  }, []);
-
+const ForPc: React.FC = () => {
   return (
     <div>
-      <BackColorChange CurrentHours={parseInt(CurrentTime[0])} CurrentMinutes={parseInt(CurrentTime[1])}/>
+      <SkyClock />
     </div>
   );
 };
 
-export default ForMobile;
+export default ForPc;

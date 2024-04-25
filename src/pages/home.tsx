@@ -5,10 +5,10 @@ import ForPc from "./ForPc";
 import ForSmartphone from "./ForMobile";
 
 const mediaQueries = {
-  mobile: '(max-width: 519px)',
-  tablet: '(min-width: 520px) and (max-width: 959px)',
-  pc: '(min-width: 960px)',
-}
+  mobile: "(max-width: 519px)",
+  tablet: "(min-width: 520px) and (max-width: 959px)",
+  pc: "(min-width: 960px)",
+};
 
 export default function Home() {
   const isMobile = useMedia(mediaQueries.mobile);
