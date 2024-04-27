@@ -1,6 +1,6 @@
-import React, { CSSProperties, useEffect, useState } from "react";
-import BackColorChange from "../style/backDesign";
-import { updateTime } from "../style/now-time";
+import React, { useEffect, useState } from "react";
+import BackColorChange from "./backDesign";
+import { updateTime } from "./now-time";
 
 const SkyClock: React.FC = () => {
   const [CurrentTime, setCurrentTime] = useState<string[]>(["00", "00"]);
@@ -18,8 +18,8 @@ const SkyClock: React.FC = () => {
 
   return (
     <BackColorChange
-      CurrentHours={parseInt(CurrentTime[0])}
-      CurrentMinutes={parseInt(CurrentTime[1])}
+      CurrentHours={CurrentTime[0]}
+      CurrentMinutes={CurrentTime[1]}
     />
   );
 };

@@ -1,7 +1,7 @@
 import React from "react";
 import SkyClock from "../compornent/SkyClock";
 
-const ForPc: React.FC = () => {
+const ForMobile: React.FC = () => {
   return (
     <div>
       <SkyClock />
@@ -9,4 +9,4 @@ const ForPc: React.FC = () => {
   );
 };
 
-export default ForPc;
+export default ForMobile;

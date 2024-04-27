@@ -1,12 +1,13 @@
 import React from "react";
-
-const backgroundStyle: React.CSSProperties = {
-  height: "100vh",
-  width: "100%",
-};
+import SkyClock from "../compornent/SkyClock";
 
 const ForPc: React.FC = () => {
-  return <div style={backgroundStyle}>for pc</div>;
+  return (
+    <div>
+      <SkyClock />
+    </div>
+  );
 };
 
 export default ForPc;
+

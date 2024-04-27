@@ -1,12 +1,12 @@
 import React from "react";
-
-const backgroundStyle: React.CSSProperties = {
-  height: "100vh",
-  width: "100%",
-};
+import SkyClock from "../compornent/SkyClock";
 
 const ForTablet: React.FC = () => {
-  return <div style={backgroundStyle}>for tablet</div>;
+  return (
+    <div>
+      <SkyClock />
+    </div>
+  );
 };
 
 export default ForTablet;

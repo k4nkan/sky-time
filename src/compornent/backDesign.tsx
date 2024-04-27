@@ -1,8 +1,8 @@
 import React from "react";
 
 interface BackColorChangeProps {
-  CurrentHours: number;
-  CurrentMinutes: number;
+  CurrentHours: string;
+  CurrentMinutes: string;
 }
 
 const backgroundSetup: React.CSSProperties = {
@@ -34,11 +34,11 @@ const BackColorChange: React.FC<BackColorChangeProps> = ({
 }) => {
   const dynamicBackgroundSetup: React.CSSProperties = {
     ...backgroundSetup,
-    backgroundColor: `rgb(0, ${CurrentMinutes}, ${CurrentHours})`,
+    backgroundColor: `rgb(100, ${CurrentMinutes}, ${CurrentHours})`,
   };
   const dynamicCircleObject: React.CSSProperties = {
     ...circleObject,
-    color: `rgb(0, ${CurrentMinutes}, ${CurrentHours})`,
+    color: `rgb(100, ${CurrentMinutes}, ${CurrentHours})`,
   };
 
   return (
