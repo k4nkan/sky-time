@@ -1,16 +1,10 @@
 import React from "react";
-import { backColorChange } from "../style/style";
-
-const backgroundStyle: React.CSSProperties = {
-  height:"100vh",
-  width:"100%",
-  ...backColorChange
-};
+import SkyClock from "../compornent/SkyClock";
 
 const ForTablet: React.FC = () => {
   return (
-    <div style={backgroundStyle}>
-      for tablet
+    <div>
+      <SkyClock />
     </div>
   );
 };
