@@ -3,16 +3,17 @@ import React from "react";
 interface BackColorChangeProps {
   CurrentHours: string;
   CurrentMinutes: string;
+  clockSize: number;
+  textSize: number;
 }
 
 const backgroundSetup: React.CSSProperties = {
   width: "100%",
   height: "100vh",
-}
+  overflow: "hidden",
+};
 
 const circleObject: React.CSSProperties = {
-  width: "200px",
-  height: "200px",
   borderRadius: "50%",
 
   backgroundColor: "#ccc",
@@ -23,22 +24,26 @@ const circleObject: React.CSSProperties = {
   transform: "translate(-50%,-50%)",
 
   display: "flex",
-  fontSize: "30px",
   justifyContent: "center",
   alignItems: "center",
-}
+};
 
 const BackColorChange: React.FC<BackColorChangeProps> = ({
   CurrentHours,
   CurrentMinutes,
+  clockSize,
+  textSize,
 }) => {
   const dynamicBackgroundSetup: React.CSSProperties = {
     ...backgroundSetup,
     backgroundColor: `rgb(100, ${CurrentMinutes}, ${CurrentHours})`,
   };
   const dynamicCircleObject: React.CSSProperties = {
+    width: `${clockSize}px`,
+    height: `${clockSize}px`,
     ...circleObject,
     color: `rgb(100, ${CurrentMinutes}, ${CurrentHours})`,
+    fontSize: `${textSize}px`,
   };
 
   return (

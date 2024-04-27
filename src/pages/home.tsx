@@ -2,7 +2,7 @@ import React from "react";
 import useMedia from "use-media";
 import ForTablet from "./ForTablet";
 import ForPc from "./ForPc";
-import ForSmartphone from "./ForMobile";
+import ForMobile from "./ForMobile";
 
 const mediaQueries = {
   mobile: "(max-width: 519px)",
@@ -10,17 +10,20 @@ const mediaQueries = {
   pc: "(min-width: 960px)",
 };
 
+const clockSize = [200, 300, 500];
+const textSize = [30, 50, 70];
+
 export default function Home() {
   const isMobile = useMedia(mediaQueries.mobile);
   const isTablet = useMedia(mediaQueries.tablet);
   const isPc = useMedia(mediaQueries.pc);
 
   if (isMobile) {
-    return <ForSmartphone />;
+    return <ForMobile clockSize={clockSize[0]} textSize={textSize[0]} />;
   } else if (isTablet) {
-    return <ForTablet />;
+    return <ForTablet clockSize={clockSize[1]} textSize={textSize[1]} />;
   } else if (isPc) {
-    return <ForPc />;
+    return <ForPc clockSize={clockSize[2]} textSize={textSize[2]} />;
   } else {
     return <div>Unknown Device</div>;
   }

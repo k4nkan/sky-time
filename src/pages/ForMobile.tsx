@@ -1,10 +1,15 @@
 import React from "react";
 import SkyClock from "../compornent/SkyClock";
 
-const ForMobile: React.FC = () => {
+interface clockSetupProps {
+  clockSize: number;
+  textSize: number;
+}
+
+const ForMobile: React.FC<clockSetupProps> = ({ clockSize, textSize }) => {
   return (
     <div>
-      <SkyClock />
+      <SkyClock clockSize={clockSize} textSize={textSize} />
     </div>
   );
 };
