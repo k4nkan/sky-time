@@ -2,7 +2,15 @@ import React, { useEffect, useState } from "react";
 import BackColorChange from "./backDesign";
 import { updateTime } from "./now-time";
 
-const SkyClock: React.FC = () => {
+interface clockSetupProps {
+  clockSize: number;
+  textSize: number;
+}
+
+const SkyClock: React.FC<clockSetupProps> = ({
+  clockSize,
+  textSize,
+  }) => {
   const [CurrentTime, setCurrentTime] = useState<string[]>(["00", "00"]);
 
   useEffect(() => {
@@ -20,6 +28,8 @@ const SkyClock: React.FC = () => {
     <BackColorChange
       CurrentHours={CurrentTime[0]}
       CurrentMinutes={CurrentTime[1]}
+      clockSize={clockSize}
+      textSize={textSize}
     />
   );
 };

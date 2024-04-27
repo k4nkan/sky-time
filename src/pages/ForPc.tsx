@@ -1,13 +1,17 @@
 import React from "react";
 import SkyClock from "../compornent/SkyClock";
 
-const ForPc: React.FC = () => {
+interface clockSetupProps {
+  clockSize: number;
+  textSize: number;
+}
+
+const ForPc: React.FC<clockSetupProps> = ({ clockSize, textSize }) => {
   return (
     <div>
-      <SkyClock />
+      <SkyClock clockSize={clockSize} textSize={textSize} />
     </div>
   );
 };
 
 export default ForPc;
-
