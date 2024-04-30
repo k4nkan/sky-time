@@ -10,7 +10,7 @@ const mediaQueries = {
   pc: "(min-width: 960px)",
 };
 
-const clockSize = [200, 300, 500];
+const clockSize = [200, 300, 400];
 const textSize = [30, 50, 70];
 
 export default function Home() {

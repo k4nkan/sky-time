@@ -1,5 +1,7 @@
 import React from "react";
 
+import { colorChange } from "./color-change";
+
 interface BackColorChangeProps {
   CurrentHours: string;
   CurrentMinutes: string;
@@ -7,22 +9,13 @@ interface BackColorChangeProps {
   textSize: number;
 }
 
-const backgroundSetup: React.CSSProperties = {
-  width: "100%",
-  height: "100vh",
-  overflow: "hidden",
-};
-
 const circleObject: React.CSSProperties = {
   borderRadius: "50%",
-
-  backgroundColor: "#ccc",
-
+  backgroundColor: `rgb(255,255,255)`,
   position: "absolute",
   top: "50%",
   left: "50%",
   transform: "translate(-50%,-50%)",
-
   display: "flex",
   justifyContent: "center",
   alignItems: "center",
@@ -34,20 +27,30 @@ const BackColorChange: React.FC<BackColorChangeProps> = ({
   clockSize,
   textSize,
 }) => {
-  const dynamicBackgroundSetup: React.CSSProperties = {
-    ...backgroundSetup,
-    backgroundColor: `rgb(100, ${CurrentMinutes}, ${CurrentHours})`,
-  };
+  let resultColor: number[] = [];
+  resultColor = colorChange(CurrentHours, CurrentMinutes);
+
+  const gradientColor = `linear-gradient(to bottom right, rgb(${resultColor[0]},${resultColor[1]},${resultColor[2]}), rgb(${resultColor[3]}, ${resultColor[4]}, ${resultColor[5]})`;
+
   const dynamicCircleObject: React.CSSProperties = {
     width: `${clockSize}px`,
     height: `${clockSize}px`,
     ...circleObject,
-    color: `rgb(100, ${CurrentMinutes}, ${CurrentHours})`,
+    color: `rgb(${resultColor[0]}, ${resultColor[1]}, ${resultColor[2]})`,
     fontSize: `${textSize}px`,
   };
 
+
+
   return (
-    <div style={dynamicBackgroundSetup}>
+    <div
+      style={{
+        width: "100%",
+        height: "100vh",
+        overflow: "hidden",
+        backgroundImage: gradientColor,
+      }}
+    >
       <div style={dynamicCircleObject}>
         {CurrentHours}:{CurrentMinutes}
       </div>
