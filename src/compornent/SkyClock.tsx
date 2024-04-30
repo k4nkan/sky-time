@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import BackColorChange from "./backDesign";
+import BackColorChange from "./back-design";
 import { updateTime } from "./now-time";
 
 interface clockSetupProps {
