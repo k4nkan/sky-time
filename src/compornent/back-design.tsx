@@ -1,6 +1,7 @@
 import React from "react";
 
 import { colorChange } from "./color-change";
+import { fontColorChange } from "./font-color-change";
 
 interface BackColorChangeProps {
   CurrentHours: string;
@@ -28,7 +29,10 @@ const BackColorChange: React.FC<BackColorChangeProps> = ({
   textSize,
 }) => {
   let resultColor: number[] = [];
+  let fontColor: number[] = [];
   resultColor = colorChange(CurrentHours, CurrentMinutes);
+  fontColor = fontColorChange(resultColor[0],resultColor[1],resultColor[2],resultColor[3],resultColor[4],resultColor[5]);
+
 
   const gradientColor = `linear-gradient(to bottom right, rgb(${resultColor[0]},${resultColor[1]},${resultColor[2]}), rgb(${resultColor[3]}, ${resultColor[4]}, ${resultColor[5]})`;
 
@@ -36,7 +40,7 @@ const BackColorChange: React.FC<BackColorChangeProps> = ({
     width: `${clockSize}px`,
     height: `${clockSize}px`,
     ...circleObject,
-    color: `rgb(${resultColor[0]}, ${resultColor[1]}, ${resultColor[2]})`,
+    color: `rgb(${fontColor[0]}, ${fontColor[1]}, ${fontColor[2]})`,
     fontSize: `${textSize}px`,
   };
 
