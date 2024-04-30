@@ -1,12 +1,13 @@
 export const colorChange = (CurrentHours: string, CurrentMinutes: string): number[] => {
     const hours: number = parseInt(CurrentHours);
-    const minutes: number = parseInt(CurrentMinutes);
-    let resultColor: number[] = [];
+    let resultColor: number[];
 
-    if (hours <= 7 && 19 <= hours) {
+    if (hours >= 7 && hours <= 19) {
         resultColor = [47, 75, 133, 47, 75, 133];
-    } else if (hours < 19 && 7 < hours) {
+    } else if (hours < 7 || hours > 19){
         resultColor = [149, 192, 236, 149, 192, 236];
+    } else {
+        resultColor = [0, 0, 0, 0, 0, 0];
     }
 
     return resultColor;
