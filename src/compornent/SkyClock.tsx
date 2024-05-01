@@ -15,8 +15,8 @@ const SkyClock: React.FC<clockSetupProps> = ({
 
   useEffect(() => {
     const intervalId = setInterval(() => {
-      const [hours, minutes] = updateTime();
-      setCurrentTime([hours, minutes]);
+      const [hours, minutes, seconds] = updateTime();
+      setCurrentTime([hours, minutes, seconds]);
     }, 1000);
 
     return () => {
@@ -28,6 +28,7 @@ const SkyClock: React.FC<clockSetupProps> = ({
     <BackColorChange
       CurrentHours={CurrentTime[0]}
       CurrentMinutes={CurrentTime[1]}
+      CurrentSeconds={CurrentTime[2]}
       clockSize={clockSize}
       textSize={textSize}
     />
