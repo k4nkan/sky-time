@@ -9,7 +9,7 @@ export const colorChange = (CurrentHours: string, CurrentMinutes: string, Curren
         resultColor = [200,206,202,226,168,114];
 
     } else if (hours >= 9 && hours < 15) {
-        resultColor = [47,101,190,86,157,225];
+        resultColor = [48,138,255,177,221,255];
 
     } else if (hours >= 15 && hours < 21) {
         resultColor = [112,132,165,212,176,181];
