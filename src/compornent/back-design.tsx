@@ -1,6 +1,5 @@
 import React from "react";
 
-import { colorChange } from "./color-change";
 import { fontColorChange } from "./font-color-change";
 
 interface BackColorChangeProps {
@@ -9,7 +8,7 @@ interface BackColorChangeProps {
   CurrentSeconds: string;
   clockSize: number;
   textSize: number;
-  
+  resultColor: number[];
 }
 
 const circleObject: React.CSSProperties = {
@@ -30,10 +29,9 @@ const BackColorChange: React.FC<BackColorChangeProps> = ({
   CurrentSeconds,
   clockSize,
   textSize,
+  resultColor,
 }) => {
-  let resultColor: number[] = [];
   let fontColor: number[] = [];
-  resultColor = colorChange(CurrentHours, CurrentMinutes, CurrentSeconds);
   fontColor = fontColorChange(resultColor[0],resultColor[1],resultColor[2],resultColor[3],resultColor[4],resultColor[5]);
 
 
