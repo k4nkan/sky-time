@@ -9,6 +9,7 @@ interface BackColorChangeProps {
   CurrentSeconds: string;
   clockSize: number;
   textSize: number;
+  
 }
 
 const circleObject: React.CSSProperties = {
